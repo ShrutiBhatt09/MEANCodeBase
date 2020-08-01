@@ -1,0 +1,276 @@
+form {
+    display: block;
+    margin: 30px;
+    overflow: hidden;
+    background:transparent;
+    border-radius: 5px;
+}
+
+@media (min-width: 800px) {
+    form > div {
+        display: inline-block;
+    }
+
+    form > div.col-submit {
+        display: block;
+    }
+}
+
+form > div > label {
+    display: block;
+    padding: 20px 20px 10px;
+    vertical-align: top;
+    font-family: Source Sans Pro, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:white;
+    cursor: pointer;
+}
+
+@media (min-width: 800px) {
+    form > div.col-1 {
+        width: 100%
+    }
+
+    form > div.col-2 {
+        width: 50%
+    }
+
+    form > div.col-3 {
+        width: 33.3333333333%
+    }
+
+    form > div.col-4 {
+        width: 25%
+    }
+
+    form > div.col-5 {
+        width: 20%
+    }
+
+    form > div.col-6 {
+        width: 75%
+    }
+}
+
+/* form > div > label > input {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 27px;
+    line-height: 27px;
+    margin: 5px -5px 0;
+    padding: 7px 5px 3px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 200;
+    opacity: .66;
+    transition: opacity .3s, box-shadow .3s;
+} */
+
+form > div.col-submit {
+    text-align: right;
+    padding: 20px;
+}
+
+form > div.col-submit button {
+    border: 1px solid white;
+    background: transparent;
+    font-size: 14px;
+    color: #fff;
+    padding: 1em;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (min-width: 800px) {
+    form > div.col-submit button {
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+.disabled-button:hover {
+    background: rgba(255, 255, 255,0.5);
+    color: black;
+}
+
+.disabled-button{
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+form > div > label > select {
+    display: block;
+    width: 100%;
+    margin: 16px 0 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 200;
+    opacity: .33;
+}
+
+form > div > label > input:focus, form > div > label > select:focus {
+    opacity: 1;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .15);
+}
+
+.padding-right-5px{
+    padding-right: 5px;
+}
+
+.background-transparent{
+    background-color: rgba(0,0,0, 0.4)!important;
+}
+
+h3 {
+    color: rgba(255, 255, 255)!important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-weight:normal;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-weight:normal;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-weight:normal;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-weight:normal;
+  }
+
+  .dotted-border{
+      border: 1px solid white;
+      border-radius: 15px;
+      padding-top: 10px;
+      background-color: rgba(0,0,0,0.6);
+  }
+
+  .order-background-img{
+    background: url('../../../assets/images/restaurant.jpg');
+    /* background-repeat: no-repeat; */
+    background-size: 100vw;
+  }
+
+  .background-transparent > .panel-heading {
+    background-color: rgba(0,0,0,0.5);
+    /* border-bottom: 1px solid white; */
+  }
+
+  .panel{
+      width: 100%;
+  }
+
+  p{
+      color: white;
+  }
+
+  .a-style{
+      font-weight: bold;
+      color: white;
+  }
+
+  label{
+      padding: 0px;
+  }
+  
+  .error-msg{
+      color: red;
+  }
+
+
+  .radio-toolbar {
+    margin: 10px;
+  }
+  
+  .radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  
+  .radio-toolbar label {
+      display: inline-block;
+      background-color: transparent;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 18px;
+      border: 2px solid white;
+  }
+
+  .radio-toolbar label:last-child{
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .radio-toolbar label:nth-child(1){
+    border-radius: 5px 0px 0px 5px;
+  }
+  
+
+  .radio-toolbar label:hover {
+    background-color:rgba(255, 255, 255,0.5);
+    color: black;
+  }
+    
+  .radio-toolbar input[type="radio"]:checked + label {
+      background-color:white;
+      color: black;
+  }
+
+
+
+
+
+  .radio-tabs {
+    margin: 10px;
+  }
+  
+  .radio-tabs input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  
+  .radio-tabs label {
+      display: block;
+      background-color: white;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 14px;
+      border: 1px solid white;
+      margin: 0px;
+      color: black;
+  }
+
+  .radio-tabs label:hover {
+    background-color:rgba(255, 255, 255,0.5);
+    color: black;
+  }
+    
+  .radio-tabs input[type="radio"]:checked + label {
+      background-color:transparent;
+      color: white;
+      border-right: 0px;
+      border-left: 2px solid white;
+  }
+
+  .vertical-tabs{
+    padding-top: 10px;
+    /* border: 1px solid white; */
+    min-height: 50vh;
+    padding-right: 0px;
+  }

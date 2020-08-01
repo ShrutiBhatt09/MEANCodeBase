@@ -1,0 +1,92 @@
+<div class="content">
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-4 col-xs-6" *ngFor="let topBlog of topBlogs">
+                <div class="post-card trending" (click)="navigateToBlogDetails(topBlog.id)">
+                    <img [src]="topBlog.imagePathHref" alt="">
+                    <div class="col-lg-12 post-content trending">
+                        <div class="title center">{{topBlog.title}}</div>
+                        <p>
+                            <time datetime="">{{topBlog.postedDate | date:'longDate'}}</time>
+                            <span></span>posted by: {{ topBlog.postedBy }}<span></span>comments: {{topBlog.comments?.length}}
+                        </p>
+                        {{topBlog.shortDescription}}
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 col-xs-6">
+                <div class="post-card trending">
+                    <img src="assets/images/page4_img2.jpg" alt="">
+                    <div class="col-lg-12 post-content trending">
+                        <div class="title center">Piscing quam id risusyn sagittisyl</div>
+                        <p>
+                            <time datetime="2013-01-01">18.10.2013</time>
+                            <span></span>posted by:admin<span></span>comments:3
+                        </p>
+                        Jtiam dui eros, laoreet sit amet est vel,odo venenatis eros. Musce adipiscing quam ill risus
+                        sagittis, non consequat lacus terdo.
+                        <br>
+
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-4 col-xs-0">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    <h3>Categories</h3>
+                    <hr>
+                    <ul class="list">
+                        <li><a href="#blog">FOOD & DRINK</a></li>
+                        <li><a href="#blog">RESTAURANT</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div id="food-drink" class="col-lg-12 padding-left-right-zero">
+                <h4 class="category-title">FOOD & DRINK</h4>
+                <hr>
+                <div class="col-lg-6 col-xs-4" *ngFor="let foodBlog of foodBlogs">
+                    <div class="post-card" (click)="navigateToBlogDetails(foodBlog.id)">
+                        <div class="col-lg-6">
+                            <img [src]="foodBlog.imagePathHref" alt="">
+                        </div>
+                        <div class="col-lg-6  post-content">
+                            <div class="title">{{foodBlog.title}}</div>
+                            <p>
+                                <time datetime="">{{foodBlog.postedDate | date}}</time>
+                                <span></span>posted by: {{foodBlog.postedBy}}<span></span>comments: {{foodBlog.comments?.length}}
+                            </p>
+                            {{foodBlog.shortDescription}}
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="restaurant" class="col-lg-12 padding-left-right-zero">
+                <h4 class="category-title">RESTAURANT</h4>
+                <hr>
+                <div class="col-lg-6 col-xs-4" *ngFor="let restaurantBlog of restaurantBlogs">
+                    <div class="post-card" (click)="navigateToBlogDetails(restaurantBlog.id)">
+                        <div class="col-lg-6">
+                            <img [src]="restaurantBlog.imagePathHref" alt="">
+                        </div>
+                        <div class="col-lg-6  post-content">
+                            <div class="title">{{restaurantBlog.title}}</div>
+                            <p>
+                                <time datetime="">{{restaurantBlog.postedDate | date}}</time>
+                                <span></span>posted by: {{restaurantBlog.postedBy}}<span></span>comments: {{restaurantBlog.comments?.length}}
+                            </p>
+                            {{restaurantBlog.shortDescription}}
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

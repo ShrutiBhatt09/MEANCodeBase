@@ -1,0 +1,105 @@
+.content{
+    background-color:#f3f3f3;
+}
+
+.fixed-tab{
+    width: 100%;
+    background-color: white;
+    margin: auto;
+    box-shadow: 1px 0px #e7e7e7;
+    border: 1px solid #e7e7e7;
+}
+
+#order,#menu,#reserve{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: unset;
+}
+
+#menu:hover, #reserve:hover, #order:hover{
+    background-color: lightgoldenrodyellow;
+}
+
+.active{
+    border-bottom: 3px solid #e3a70e;
+    color: #e3a70e;
+}
+
+.restaurant-details-card,.sub-content{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    box-shadow: 1px 0px #e7e7e7;
+    border: 1px solid #e7e7e7;
+    display: -webkit-box;
+    margin-bottom: 1%;
+}
+
+.restaurant-title{
+    color: #e3a70e;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.category{
+    color: #89959b;
+}
+
+.area, .status{
+    font-weight: bold;
+}
+
+.orange{
+    color: orange;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.bg-orange{
+    background-color: orange;
+}
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.hours-card{
+    padding: 2%;
+    background-color: white;
+    box-shadow: 1px 0px #e7e7e7;
+    border: 1px solid #e7e7e7;
+}
+
+.restaurant-rating{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hours-card::after{
+    background: url("assets/images/clock.jpg");
+    opacity: 0.03;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    background-size: cover;
+}
+
+.hours-card .time{
+    font-weight: bold;
+}
+

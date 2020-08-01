@@ -1,0 +1,124 @@
+.content{
+    background-color:#f3f3f3;
+}
+
+.content h2{
+    color: #33373d;
+}
+
+.restaurant-card, .filter-card{
+    padding-top: 2%;
+    background-color: white;
+    box-shadow: 1px 0px #e7e7e7;
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+
+.restaurant-area{
+    font-weight: bold;
+}
+
+.restaurant-address{
+    color:#89959b;
+    font-size: 0.9em;
+}
+
+.restaurant-rating{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.orange{
+    color: orange;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.bg-orange{
+    background-color: orange;
+}
+
+.bg-green{
+    background-color: green;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.restaurant-type{
+    background-color: teal;
+    color: white;
+    font-size: 0.85em;
+}
+
+.restaurant-title{
+    color: #e3a70e;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.sub-titles + div{
+    left: -2%;
+}
+
+.sub-titles{
+    left: -2%;
+    color: #89959b;
+}
+
+.restaurant-card-footer{
+    margin-bottom: 1%;;
+    font-weight: bold;
+}
+
+.restaurant-card-footer div{
+    cursor: pointer;
+}
+
+.restaurant-card-footer div:nth-child(-n + 3){
+    border-right: 1px solid lightgrey;
+}
+
+.restaurant-status{
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.restaurant-status i{
+    font-size: 0.8em;
+}
+
+.filter-title{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.filter-subtitle{
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.active{
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.active+.filter-sub-opt{
+    font-weight: bold;
+}
+
+.filter-sub-opt{
+    color: darkgrey;
+}
+
+.filter-title+a, .filter-option{
+    cursor: pointer;
+}

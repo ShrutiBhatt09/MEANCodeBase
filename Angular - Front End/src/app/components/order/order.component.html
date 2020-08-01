@@ -1,0 +1,191 @@
+<div class="content contact order-background-img">
+    <div class="col-lg-12">
+        <h3 style="color: white;" class="text-align-center padding-top-bottom-zero">
+            <i class="fa fa-shopping-cart"></i>
+            Finish your order
+        </h3>
+    </div>
+    <div class="row">
+        <div class="container padding-left-right-zero">
+            <div class="col-lg-8">
+                <div class="panel-group">
+                    <form class="margin-zero" [formGroup]="orderForm" novalidate>
+                        <div class="panel panel-default background-transparent" >
+                            <div class="panel-heading">
+                                <a *ngIf="isDeliverySummary" class="pull-right a-style" (click)="showDeliverySummary()">change</a>
+                                <h3 class="padding-top-bottom-zero">Delivery address</h3>
+                            </div>
+                            <div *ngIf="!isDeliverySummary" class="panel-body padding-top-zero">
+                                <div class="col-lg-12 padding-left-right-zero">
+                                    <div class="padding-right-5px padding-left-zero">
+                                        <label>Address</label>
+                                        <textarea class="form-control" formControlName="address"
+                                            placeholder="What is the shipping address?" rows="2"></textarea>
+                                        <span class="error-msg"
+                                            *ngIf="!orderForm.get('address').valid && orderForm.get('address').touched && orderForm.get('address').errors['required']">
+                                            <i class="fa fa-trash-o"></i>
+                                            Require field and at least 5 characters
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 padding-left-right-zero">
+                                    <div class="col-lg-4 padding-right-5px padding-left-zero">
+                                        <lacc-input-container errorMessage="Door/Flat no. can not be empty"
+                                            label="Door/Flat no">
+                                            <input class="form-control" formControlName="number" autocomplete="off"
+                                                placeholder="Door/Flat no.">
+                                        </lacc-input-container>
+                                    </div>
+                                    <div class="col-lg-4 padding-right-5px padding-left-zero">
+                                        <lacc-input-container errorMessage="Landmark can not be empty" label="Landmark">
+                                            <input class="form-control" formControlName="landmark" autocomplete="off"
+                                                placeholder="Landmark">
+                                        </lacc-input-container>
+                                    </div>
+                                    <div class="col-lg-4 padding-left-right-zero">
+                                        <lacc-input-container errorMessage="Zip code can not be empty" label="Zip code">
+                                            <input class="form-control" formControlName="zipcode" autocomplete="off"
+                                                placeholder="Zip code">
+                                        </lacc-input-container>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 padding-left-zero">
+                                    <label>Address Tag</label>
+                                    <div class="radio-toolbar margin-zero">
+                                        <input type="radio" id="home" formControlName="addresstag" value="Home">
+                                        <label for="home"><span><i class="fa fa-home"></i></span> Home</label>
+                                    
+                                        <input type="radio" id="work" formControlName="addresstag" value="Work">
+                                        <label for="work"><span><i class="fa fa-briefcase"></i></span> Work</label>
+                                    
+                                        <input type="radio" id="other" formControlName="addresstag" value="Other">
+                                        <label for="other"><span><i class="fa fa-map-marker"></i></span> Other</label> 
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button 
+                                        type="button" 
+                                        [disabled]="!orderForm.valid"
+                                        (click)="showDeliverySummary()"
+                                        class="btn btn-default pull-right">
+                                        Procced
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf="isDeliverySummary" class="panel-body padding-top-zero">
+                                <p style="font-size: 16px;">{{orderForm.value.addresstag || "Other"}}</p>
+                                <p>{{orderForm.value.number}}, {{orderForm.value.address}}, {{orderForm.value.zipcode}}</p>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default background-transparent" style="width:100%;">
+                            <div class="panel-heading">
+                                <h3>Choose Payment method</h3>
+                            </div>
+                            <div class="panel-body"> <!-- *ngIf="isDeliverySummary" -->
+                                <div class="col-lg-12 padding-left-right-zero">
+                                    <div class="col-lg-4 vertical-tabs radio-tabs margin-zero">
+                                        <input type="radio" id="card" formControlName="paymentOption" value="card" checked>
+                                        <label for="card">
+                                            <span><i class="fa fa-credit-card"></i></span>
+                                            Credit/Debit cards
+                                        </label>
+                                    
+                                        <input type="radio" id="UPI" formControlName="paymentOption" value="UPI">
+                                        <label for="UPI">
+                                            <span><i class="fa fa-briefcase"></i></span> 
+                                            UPI
+                                        </label>
+                                    
+                                        <input type="radio" id="wallets" formControlName="paymentOption" value="wallet">
+                                        <label for="wallets">
+                                            <span><i class="fa fa-map-marker"></i></span> 
+                                            Wallets
+                                        </label>
+                                        
+                                        <input type="radio" id="netbancking" formControlName="paymentOption" value="netbancking">
+                                        <label for="netbancking">
+                                            <span><i class="fa fa-university"></i></span> 
+                                            Netbancking
+                                        </label> 
+                                  
+                                        <input type="radio" id="cash" formControlName="paymentOption" value="cash">
+                                        <label for="cash">
+                                            <span><i class="fa fa-money"></i></span> 
+                                            Cash
+                                        </label>
+
+                                        <input type="radio" id="food-card" formControlName="paymentOption" value="foodcard">
+                                        <label for="food-card">
+                                            <span><i class="fa fa-credit-card"></i></span> 
+                                            Food card
+                                        </label>
+                                    </div>
+                                    <!-- <div class="col-lg-3 padding-left-right-zero">
+                                        <lacc-radio [options]="paymentOptions" formControlName="paymentOptions">
+                                        </lacc-radio>
+                                    </div> -->
+                                    <div class="col-lg-8 padding-right-zero">
+                                        <span *ngIf="orderForm.value.paymentOption=='card' || orderForm.value.paymentOption=='foodcard'">
+                                            <lacc-card></lacc-card>
+                                        </span>
+                                        <span *ngIf="orderForm.value.paymentOption=='UPI'">
+                                            <label>Pay via New VPA</label>
+                                            <div class="col-lg-12 padding-left-zero">
+                                                <p>You must have a Virtual Payment Address</p>
+                                                <input type="text" class="form-control" placeholder="Enter VPA"/>
+                                                <label>
+                                                    <input type="checkbox">
+                                                    Securely save this VPA for a faster checkout next time.
+                                                </label>
+                                            </div>
+                                        </span>
+                                        <span *ngIf="orderForm.value.paymentOption=='wallet'">
+                                            <p>Wallet Inprogres.....</p>
+                                        </span>
+                                        <span *ngIf="orderForm.value.paymentOption=='netbancking'">
+                                            <p>Netbancking Inprogres....</p>
+                                        </span>
+                                        <span *ngIf="orderForm.value.paymentOption=='cash'">
+                                            <h3>Please keep exact change handy to help us serve you better</h3>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 pull-right">
+                                    <button class="btn btn-default pull-right"
+                                        [disabled]="!orderForm.valid || cartItems().length === 0"
+                                        (click)="checkOrder(orderForm.value)"
+                                        type="submit">Checkout
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-lg-4">
+                <div class="panel-group">
+                    <div class="panel panel-default background-transparent">
+                        <!-- <div class="panel-heading">Panel with panel-default class</div> -->
+                        <div class="panel-body">
+                            <div class="col-lg-12">
+                                <h3 class="padding-top-bottom-zero">Order items</h3>
+                                <lacc-order-items [items]="cartItems()" (increaseQtd)="increaseQtd($event)"
+                                    (decreaseQtd)="decreaseQtd($event)" (remove)="remove($event)">
+                                </lacc-order-items>
+                            </div>
+                            <div class="col-lg-12">
+                                <lacc-coupon></lacc-coupon>
+                            </div>
+                            <div class="col-lg-12 dotted-border">
+                                <label style="border-bottom: 2px solid white;">Freight and total</label>
+                                <lacc-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()">
+                                </lacc-delivery-costs>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="col-lg-12">
+    <div *ngFor="let order of orders" class="panel panel-default curved-border">
+      <div class="panel-body">
+        <div class="col-lg-2">
+          <img class="curved-border" [src]="order.imagePath">
+        </div>
+        <div class="col-lg-10">
+          <h3 class="margin-top-zero">{{order.name}} Restaurent</h3>
+          <p>{{order.address}}</p>
+          <div class="col-lg-12">
+            <b>Ordered Items</b>
+          </div>
+          <div class="col-lg-12" *ngFor="let item of order.orderItems">
+            <div class="text-left col-lg-3 padding-left-zero">({{ item.quantity }}x) {{ item.menuId }}</div>
+            <div class="col-lg-3 padding-left-zero">{{ "63" | currency: 'INR': 'symbol'}}</div>
+            <div class="col-lg-6"></div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="col-lg-12 panel-bottom padding-left-zero">
+            <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary" style="margin-left: 10px;">
+              <span><i class="fa fa-repeat"></i></span> Re-order
+            </button>
+            <span class="pull-right">
+              <p>Total Paid: <b>{{ "126" | currency: 'INR': 'symbol'}}</b> </p>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="panel-footer">
+        <button class="btn btn-primary">View Details</button>
+        <button class="btn btn-primary" style="margin-left: 10px;"><span><i class="fa fa-repeat"></i></span> Re-order</button>
+      </div> -->
+    </div>
+  </div>
+</div>

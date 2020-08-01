@@ -1,0 +1,20 @@
+<div class="col-lg-12 menu-container padding-right-zero">
+    <div class="width_70">
+        <!-- <lacc-menu-item
+                *ngFor="let item of menu | async"
+                [menuItem]="item"
+                (add)="shoppingCart.addItem($event)"
+        > -->
+        <lacc-menu-item
+                *ngFor="let item of menu"
+                [menuItem]="item"
+                (add)="shoppingCart.addItem($event)"
+        >
+        </lacc-menu-item>
+    </div>
+
+    <div class="width_30 padding-right-zero">
+        <lacc-shopping-cart #shoppingCart></lacc-shopping-cart>
+    </div>
+</div>
+

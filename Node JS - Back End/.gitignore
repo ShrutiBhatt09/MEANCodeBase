@@ -1,0 +1,4 @@
+.vscode
+node_modules/
+config/config.config.env
+report.20200619.190254.25128.0.001.json

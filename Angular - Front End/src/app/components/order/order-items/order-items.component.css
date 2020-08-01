@@ -1,0 +1,11 @@
+tr > td{
+    padding-left: 0px;
+    color: white;
+    border: none;
+}
+
+thead > th{
+    color: white;
+    border-bottom: 2px solid white;
+}
+

@@ -1,0 +1,37 @@
+<div class="content">
+    <br>
+    <div class="row">
+        <div class="col-lg-1 col-xs-0"></div>
+        <div class="col-lg-6 col-xs-12">
+            <span class="label">{{blog.category | uppercase}}</span><br>
+            <h2>{{blog.title}}</h2>
+            <span class="bloginfo">{{blog.postedDate | date}}</span><span class="bloginfo pull-right">Posted By {{blog.postedBy}}</span><br>
+            <br>
+            <img class="blog-img" [src]="blog.imagePathHref"/>
+            <br><br>
+            {{blog.description}}
+        </div>
+        <div class="col-lg-5 col-xs-12">
+            <div class="col-lg-4 col-xs-0"></div>
+            <div class="col-lg-7 col-xs-12 comment-section">
+                <div class="comment-content">
+                    <h4>Comments</h4>
+                    <textarea id="commentInput" (input)="checkForInput($event)" class="comment-area" placeholder="Add your comments here."></textarea>
+                    <button (click)="submitComment()" class="submit-comment pull-right" *ngIf="isLoggedIn(); else notLoggedIn" disabled>Submit</button>
+                    <ng-template #notLoggedIn>
+                        <span class="submit-comment pull-right">Login to comment</span>
+                    </ng-template>
+                    
+                    <br><br><br>
+                    <div class="comments" *ngFor="let comment of blog.comments">
+                        <span class="commentedBy">{{comment.commentBy}}</span><span class="commentDate pull-right">{{comment.commentDate | date}}</span><br>
+                        <p class="comment">{{comment.description}}</p>
+                        <hr>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-1 col-xs-0"></div>
+        </div>
+    </div>
+</div>

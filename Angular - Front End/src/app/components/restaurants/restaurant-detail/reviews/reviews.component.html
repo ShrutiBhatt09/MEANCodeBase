@@ -1,0 +1,17 @@
+<div class="container_12">
+    <!-- <div class="grid_6 reviews" *ngFor="let review of reviews | async"> -->
+    <div class="grid_6 reviews" *ngFor="let review of reviews">
+        <h4>{{ review.name }} - {{ review.date | date: 'dd/MM/yyyy'}}</h4>
+
+        <img *ngIf="review.rating < 3" src="assets/images/reactions/pissed.png" class="img_inner fleft">
+
+        <img *ngIf="review.rating >= 3 && review.rating <= 4" src="assets/images/reactions/soso.png"
+             class="img_inner fleft">
+
+        <img *ngIf="review.rating > 4" src="assets/images/reactions/loved.png" class="img_inner fleft">
+
+        <div class="extra_wrapper">
+            <p class="col1">{{ review.comments }} </p>
+        </div>
+    </div>
+</div>

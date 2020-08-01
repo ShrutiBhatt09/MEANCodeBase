@@ -1,0 +1,39 @@
+.icon-offers-coupon:before {
+    content: "\E948";
+}
+
+.apply-coupon{
+    color: white;
+    height: auto;
+    border: 1px dashed white;
+    display: block;
+    text-align: center;
+    margin:10px 0px 10px 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.backdrop{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0,0,0,0.75);
+    z-index: 50;
+}
+
+.alert-box{
+    background-color: white;
+    box-shadow: 0 2px 8px rgb(0,0,0,0.26);
+    top:30vh;
+    left:20vw;
+    width:60vw;
+    padding: 16px;
+    position: fixed;
+    z-index: 100;
+}
+
+.alert-box-actions{
+    text-align: right;
+}

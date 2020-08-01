@@ -1,0 +1,119 @@
+<div class="panel panel-default" [ngClass]="{'shadow-effect':items().length}">
+    <div class="panel-heading text-center">
+        <span class="panel-title">
+            <i class="fa fa-shopping-cart"></i> Cart
+            <button *ngIf="items().length" (click)="clear()" type="button" data-toggle="tooltip" data-placement="top" title="Clear Cart" class="btn btn-danger btn-xs pull-right"><i class="fa fa-times"></i>
+            </button>
+        </span>
+    </div>
+    <div class="panel-body">
+        <div *ngIf="!items().length">
+            <p class="text-center">Your shopping cart is empty</p>
+        </div>
+
+        <div class="table-responsive" *ngIf="items().length">
+            <table class="table">
+                <tbody>
+                <tr *ngFor="let item of items()">
+                    <th style="width:60%" class="text-left">({{ item.quantity }}x) {{ item.menuItem.name }}</th>
+
+                    <td class="text-right">{{ item.menuItem.price | currency: 'BRL': 'symbol'}}</td>
+
+                    <td class="text-right">
+                        <a (click)="removeItem(item)" class="btn btn-sm danger"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Total:</th>
+
+                    <td class="text-right">{{ total() | currency: 'BRL':'symbol'}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel-footer text-center" [routerLink]="['/order']">
+        <span>Checkout</span>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<style>
+    .btn-danger{
+        position: absolute;
+        border-radius: 50%;
+        margin-left: 10%;
+        margin-top: -1.5%;
+    }
+    .panel-footer{
+        background-color: #60b246;
+        border-top: 1px solid #60b246;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .panel-footer > a{
+        text-decoration: none;
+    }
+
+    .panel-heading{
+        background-color: white;
+    }
+
+    .panel-body{
+        min-height: 9em;
+    }
+
+    .panel-title{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .panel-footer span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .panel-footer span:after {
+        content: '\2192';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .panel-footer:hover span {
+        padding-right: 25px;
+    }
+
+    .panel-footer:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .panel {
+        display: block;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        transition: box-shadow 500ms;
+        box-sizing: border-box;
+        min-height: 16em;
+    }
+
+    .shadow-effect {
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+    }
+
+</style>

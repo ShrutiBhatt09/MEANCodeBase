@@ -1,0 +1,10 @@
+<div class="col-lg-12 col-xs-12">
+    <h3>Food Menu</h3>
+    <hr>
+    <ol *ngFor='let menuItem of menu'>
+        <li ><span class="food-title">{{menuItem.name}}</span><span class="food-price pull-right">$
+                {{menuItem.price}}</span><br>
+            <span class="food-desciption">{{menuItem.description}}</span>
+        </li>
+    </ol>
+</div>

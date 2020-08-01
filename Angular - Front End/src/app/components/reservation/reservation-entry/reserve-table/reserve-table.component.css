@@ -1,0 +1,13 @@
+form div{
+    margin-bottom: 2%;
+}
+
+form button{
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+label{
+    color:#5f5e4e;
+}

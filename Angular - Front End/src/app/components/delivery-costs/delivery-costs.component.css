@@ -1,0 +1,9 @@
+tr >th,tr > td{
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+tr:nth-last-child(2){
+    border-bottom: 3px solid white;
+}

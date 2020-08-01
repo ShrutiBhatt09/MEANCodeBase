@@ -1,0 +1,18 @@
+.margin-left-right-5px{
+    margin-right: 5px;
+}
+
+.curved-border {
+    border-radius: 15px;
+}
+
+.panel-bottom{
+    margin-top: 20px;
+    border-top: 2px dotted #a09e9e;
+    padding-top: 10px;
+}
+
+tr > td,tr > th {
+    padding-left: 0px;
+    border: none;
+}

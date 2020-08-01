@@ -1,0 +1,30 @@
+<div class="col-12" *ngIf="items.length === 0">
+    <p style="color: white;">You have no items to order :'(  come on man, you can find our menu <a [routerLink]="['/restaurants']">here</a></p>
+</div>
+
+<!--{{ items | json }}-->
+<table class="table table-borderless table-order tab-content" *ngIf="items.length">
+    <thead>
+    <th>Item</th>
+    <!-- <th>Description</th> -->
+    <th>Price</th>
+    <th>QTY</th>
+    <!-- <th></th> -->
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items">
+
+        <td>{{ item.menuItem.name }}</td>
+        <!-- <td>{{ item.menuItem.description }}</td> -->
+        <td> {{ item.value() | currency: 'BRL' :'symbol' }}</td>
+        <td>
+            <a (click)="emitDecreaseQtd(item)" class="btn btn-sm"> <i class="fa fa-minus"></i> </a>
+            {{ item.quantity }}
+            <a (click)="emitIncreaseQtd(item)" class="btn btn-sm"> <i class="fa fa-plus"></i> </a>
+        </td>
+        <!-- <td>
+            <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-trash-o"></i></a>
+        </td> -->
+    </tr>
+    </tbody>
+</table>
